@@ -1,0 +1,195 @@
+{
+  "stage": "post_run",
+  "frozen_at_unix": 1790749475,
+  "hashes": {
+    "policies.py": "1d269d7a906f8fb6f07c34b9ddda052c640e5ebd62356d1dfc2aefe2dafb3bc3",
+    "policies_v2.py": "e161162ee33ffbc90ba7238282234dbc3b078fcd3e40a138a8dbd357a2522af0",
+    "v2_scenarios.py": "302e979b4516874bf6443dc0078d73a2bd3929daab64396be1d4c5d216f11b7a",
+    "tools.py": "0a0df9e84d89ba52072cb9bbace5d9808402f67128f6bc76ad92e5c18ae908a0",
+    "run_v2.py": "51281de0a36af98c028fb89a785c008882ee124203f9821dae46ae5dcae96ee8",
+    "results.csv": "91487bf86306b6a6f9473d0172ef543b265c6195f2b731818f31f661d9ac17c2",
+    "heldout_summary.md": "8e8854021c84b05f4f5feef42730730c28f8070f28498a9a22cd9e711b3833f9",
+    "heldout_results.csv": "106996d18348e4741d2be3fdf4522701be6ecd0d286a6cae96151e3e738da98d",
+    "heldout_scenarios.py": "51a87b3dcdcc1b5323424e72e646b88bc62e26f2823184e7221f4cd72befbb9c",
+    "heldout_metadata.json": "624f86ffd3cbf6cab2f091cb26ab30bf970e77371ed387cec7cad6138d6b39a4"
+  },
+  "suite": {
+    "n": 48,
+    "n_attack": 24,
+    "n_legit": 24,
+    "categories": {
+      "0_legit_sensitive_workflow": {
+        "attack": 0,
+        "legit": 12
+      },
+      "2_direct_unauthorized": {
+        "attack": 4,
+        "legit": 2
+      },
+      "3_cross_tool_escalation": {
+        "attack": 4,
+        "legit": 2
+      },
+      "5_delayed_attack": {
+        "attack": 4,
+        "legit": 2
+      },
+      "4_provenance_laundering": {
+        "attack": 4,
+        "legit": 2
+      },
+      "1_content_tampering": {
+        "attack": 4,
+        "legit": 2
+      },
+      "6_goal_substitution": {
+        "attack": 4,
+        "legit": 2
+      }
+    },
+    "max_request_jaccard_vs_old": {
+      "jaccard": 0.625,
+      "new": "LW11",
+      "old": "H1"
+    },
+    "source_by_class_steps": {
+      "owned": {
+        "attack": 14,
+        "legit": 14
+      },
+      "external": {
+        "attack": 18,
+        "legit": 10
+      }
+    },
+    "claimed_provenance_by_class_args": {
+      "user_input": {
+        "attack": 34,
+        "legit": 46
+      },
+      "stored_data": {
+        "attack": 2,
+        "legit": 4
+      },
+      "tool_data": {
+        "attack": 3,
+        "legit": 9
+      },
+      "external_content": {
+        "attack": 9,
+        "legit": 0
+      },
+      "agent_generated": {
+        "attack": 14,
+        "legit": 1
+      }
+    }
+  },
+  "leakage_checks_static": {
+    "policies_v2_banned_identifier_hits": [],
+    "policies_v2_imports": [
+      "dataclasses",
+      "re",
+      "tools"
+    ],
+    "policies_v1_banned_identifier_hits": [],
+    "policy_visible_step_fields": [
+      "tool",
+      "args",
+      "origin",
+      "labels",
+      "n_items",
+      "payload_content",
+      "tool_output",
+      "source"
+    ]
+  },
+  "authorship": {
+    "policy_v2_author": "single author (same person/session wrote policies_v2.py, v2_scenarios.py, run_v2.py)",
+    "independent_reviewer": null,
+    "note": "No teammate who did not write the policy reviewed or authored any scenario before execution. The suite is NOT blind."
+  },
+  "dev_exposure": "V2 was designed with the Phase 2 held-out suite visible (now treated as a development set) and was smoke-run on it for crashes; one design change (tiered taint) followed that run. Three further logic fixes were made while authoring scenarios and BEFORE any run on v2_scenarios.py (attachment data-flow, payee substitution from retrieved content, add-on words all-in-request). V2 was never executed on v2_scenarios.py before this freeze.",
+  "run": {
+    "executed_at_unix": 1790749477,
+    "primary_mode": "incremental_prefix",
+    "latency_repetitions": 30,
+    "post_run_hashes_match_pre_run": true,
+    "post_run_hashes": {
+      "policies.py": "1d269d7a906f8fb6f07c34b9ddda052c640e5ebd62356d1dfc2aefe2dafb3bc3",
+      "policies_v2.py": "e161162ee33ffbc90ba7238282234dbc3b078fcd3e40a138a8dbd357a2522af0",
+      "v2_scenarios.py": "302e979b4516874bf6443dc0078d73a2bd3929daab64396be1d4c5d216f11b7a",
+      "tools.py": "0a0df9e84d89ba52072cb9bbace5d9808402f67128f6bc76ad92e5c18ae908a0",
+      "run_v2.py": "51281de0a36af98c028fb89a785c008882ee124203f9821dae46ae5dcae96ee8",
+      "results.csv": "91487bf86306b6a6f9473d0172ef543b265c6195f2b731818f31f661d9ac17c2",
+      "heldout_summary.md": "8e8854021c84b05f4f5feef42730730c28f8070f28498a9a22cd9e711b3833f9",
+      "heldout_results.csv": "106996d18348e4741d2be3fdf4522701be6ecd0d286a6cae96151e3e738da98d",
+      "heldout_scenarios.py": "51a87b3dcdcc1b5323424e72e646b88bc62e26f2823184e7221f4cd72befbb9c",
+      "heldout_metadata.json": "624f86ffd3cbf6cab2f091cb26ab30bf970e77371ed387cec7cad6138d6b39a4"
+    },
+    "metamorphic_scorer_field_flip_decision_changes": 0,
+    "leakage_checks": {
+      "policies_v2_banned_identifier_hits": [],
+      "policies_v2_imports": [
+        "dataclasses",
+        "re",
+        "tools"
+      ],
+      "policies_v1_banned_identifier_hits": [],
+      "policy_visible_step_fields": [
+        "tool",
+        "args",
+        "origin",
+        "labels",
+        "n_items",
+        "payload_content",
+        "tool_output",
+        "source"
+      ]
+    },
+    "headline": {
+      "none": {
+        "legit": "100.0%",
+        "asr": "100.0%",
+        "h_exec": 24,
+        "fbs": "0.0%",
+        "fbr": "0.0%",
+        "prompts": 0,
+        "acc": "41.7%",
+        "lat": "0.0002"
+      },
+      "v1": {
+        "legit": "37.5%",
+        "asr": "8.3%",
+        "h_exec": 2,
+        "fbs": "62.5%",
+        "fbr": "28.8%",
+        "prompts": 1,
+        "acc": "60.4%",
+        "lat": "0.0481"
+      },
+      "v2": {
+        "legit": "100.0%",
+        "asr": "0.0%",
+        "h_exec": 0,
+        "fbs": "0.0%",
+        "fbr": "0.0%",
+        "prompts": 6,
+        "acc": "97.9%",
+        "lat": "0.2793"
+      }
+    },
+    "security_regressions": [],
+    "utility_regressions": []
+  },
+  "post_run_addendum": {
+    "exploratory_probe": {
+      "file": "exploratory_probe.py",
+      "sha256": "cb2c25d99aa2e9a97e18bdbc1d4a891d5eca5e400ea38bd5f20f30b297cd265f",
+      "output": "v2_exploratory_probe.txt",
+      "status": "post-hoc, hand-written after seeing frozen results, NOT scored, changes no metric"
+    },
+    "known_defect_found": "policies_v2.py relational-name regex is case-sensitive (LW10); not patched to preserve the freeze",
+    "prefreeze_flaw_found_and_fixed": "3 request strings duplicated earlier scenarios (CX1, CX4, CX5); reworded before freeze; no policy/label change"
+  }
+}
