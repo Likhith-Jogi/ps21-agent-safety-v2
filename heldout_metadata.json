@@ -1,0 +1,51 @@
+{
+  "stage": "pre_run_freeze",
+  "frozen_policy": {
+    "file": "policies.py",
+    "sha256": "1d269d7a906f8fb6f07c34b9ddda052c640e5ebd62356d1dfc2aefe2dafb3bc3",
+    "matches_known_prefix_and_suffix": "1d269d7a...dafb3bc3"
+  },
+  "heldout_scenarios": {
+    "file": "heldout_scenarios.py",
+    "sha256": "51a87b3dcdcc1b5323424e72e646b88bc62e26f2823184e7221f4cd72befbb9c",
+    "n_scenarios": 30
+  },
+  "original_experiment": {
+    "results_csv_sha256": "91487bf86306b6a6f9473d0172ef543b265c6195f2b731818f31f661d9ac17c2",
+    "status": "unchanged"
+  },
+  "other_files": {
+    "tools.py": "0a0df9e84d89ba52072cb9bbace5d9808402f67128f6bc76ad92e5c18ae908a0",
+    "run_experiment.py": "ae02996733f6e546064794bb279e865cebbea46ba2fe43e78d7508bf38eb6e1c",
+    "run_heldout.py": "b18c460d79841c8b325618f86fb294a53b2a02802d4e2f797aab8daf497274a5"
+  },
+  "frozen_at_unix": 1790744541,
+  "fairness_note": "Tool-policy baseline receives only the tool identifier; the trajectory policy receives user_request, the prefix of policy-visible steps (args, provenance, labels of executed steps, payload_content, tool_output of executed steps), and state. This asymmetry is inherent to the approach and is not hidden. No policy receives expected/category/is_attack/harmful/human_approves/root_origin.",
+  "run": {
+    "executed_at_unix": 1790744545,
+    "primary_mode": "incremental_prefix",
+    "secondary_mode": "whole_plan_diagnostic",
+    "latency_repetitions": 200,
+    "post_run_hashes_match_pre_run": true,
+    "post_run_hashes": {
+      "policies.py": "1d269d7a906f8fb6f07c34b9ddda052c640e5ebd62356d1dfc2aefe2dafb3bc3",
+      "heldout_scenarios.py": "51a87b3dcdcc1b5323424e72e646b88bc62e26f2823184e7221f4cd72befbb9c",
+      "results.csv": "91487bf86306b6a6f9473d0172ef543b265c6195f2b731818f31f661d9ac17c2"
+    },
+    "leakage_checks": {
+      "policies_py_references_eval_only_fields": [],
+      "policies_py_references_payload_content": false,
+      "policy_visible_step_fields": [
+        "tool",
+        "args",
+        "origin",
+        "labels",
+        "n_items",
+        "payload_content",
+        "tool_output"
+      ],
+      "candidate_step_outputs_masked": true,
+      "injected_tag_used": false
+    }
+  }
+}
